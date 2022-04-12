@@ -1,0 +1,22 @@
+.container {
+  width: 90vw;
+  margin: 2rem auto;
+  background-color: rgb(218, 235, 241);
+  padding: 1rem;
+
+}
+
+.inputfiled {
+  display: inline-block;
+  background-color: white;
+}
+
+.btnContainer {
+  margin : 1rem 0;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 50vw;
+  }
+}
