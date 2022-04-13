@@ -19,11 +19,14 @@ const Home : FC = () =>{
         try {
             const response = await axios.get(url);
             setCountry("");
+            console.log(response.data);
             navigate("/countrydetail" , 
                 {state:{ 
                     officialName: response.data[0].name.official,
                     capital: response.data[0].capital[0] ,
                     population: response.data[0].population,
+                    latitude: response.data[0].latlng[0],
+                    langitude: response.data[0].latlng[1],
                     flag: response.data[0].flags.png ,
                 }}
             );           

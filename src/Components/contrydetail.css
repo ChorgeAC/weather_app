@@ -11,14 +11,27 @@
     }
 }
 
-.capitalContainer {
+.itemContainer {
     display: flex;
     justify-content: space-evenly;
 }
 
-.logoContainer {
+.weatherInfo {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.weatherInfoItems {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 0.5rem;
+}
+
+.weatherInfoItems p {
+    margin: 0 0.5rem;
+    font-weight: 500;
 }
