@@ -8,7 +8,7 @@ it('should have input filed lable as country name', ()=>{
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />}></Route>
-            </Routes>
+            </Routes> 
         </BrowserRouter>
     );
     const textField = screen.getByLabelText(/country name/i);
@@ -23,6 +23,6 @@ it('submit button should be disable if input is empty', ()=>{
             </Routes>
         </BrowserRouter>
     );
-    const button = screen.getByText(/Submit/i).closest('button');
-    expect(button).toHaveAttribute('disabled');
-});
+    const btn = screen.getByText(/Submit/i).closest('button');
+    expect(btn).toHaveAttribute('disabled'); 
+});      

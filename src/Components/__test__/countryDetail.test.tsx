@@ -10,9 +10,31 @@ const state = {
     flag : "https://",
 }
 
+it("On page load country name should display", ()=>{
+    render(
+        <MemoryRouter initialEntries={[{ pathname: '/countryDetail', state:state }]}>
+            <CountryDetail />
+        </MemoryRouter>
+
+    );
+    const name = screen.getByText(state.officialName);
+    expect(name).toBeInTheDocument();
+});
+
+it("On page load country flag should display", ()=>{
+    render(
+        <MemoryRouter initialEntries={[{ pathname: '/countryDetail', state:state }]}>
+            <CountryDetail />
+        </MemoryRouter>
+
+    );
+    const imgtag = screen.getByAltText(state.officialName);
+    expect(imgtag).toHaveAttribute('src',state.flag);
+});
+
 it("onclick 'capital weather' button weather information shown", async ()=>{
     render(
-        <MemoryRouter initialEntries={[{ pathname: '/countr', state:state }]}>
+        <MemoryRouter initialEntries={[{ pathname: '/countryDetail', state:state }]}>
             <CountryDetail />
         </MemoryRouter>
     );
@@ -20,7 +42,6 @@ it("onclick 'capital weather' button weather information shown", async ()=>{
     await act(async () => {
         userEvent.click(btn);
     });
-    expect((await screen.findAllByText(/Temperature/i)).length).toEqual(1);
-    expect((await screen.findAllByText(/Wind Speed/i)).length).toEqual(1);
-    expect((await screen.findAllByText(/Precip /i)).length).toEqual(1);
+    expect((await screen.findByText(/Temperature/i))).toBeInTheDocument();
 });
+

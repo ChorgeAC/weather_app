@@ -49,7 +49,7 @@ const Countrydetail : FC = () =>{
         <>
             <div className="container">
                 <h1>{officialName}</h1>
-                <img src={flag} alt="officialName"/>
+                <img src={flag} alt={officialName}/>
                 <div className='itemContainer' >
                     <h3>Capital</h3>
                     <h3>{capital}</h3>
@@ -78,7 +78,7 @@ const Countrydetail : FC = () =>{
                             <p>{capital}</p>
                         </div>
                         <div className='weatherInfoItems'>
-                            <div>Tempertaure</div>
+                            <div>Temperature</div>
                             <p>{weather.temperature}{'\u00b0'} C</p>
                         </div>
                         <div className='weatherInfoItems'>
